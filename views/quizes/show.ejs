@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <form method="get" action="/quizes/<%= quiz.id%>/answer">
+        <h3>Pregunta:</h3>
+        <h4><%= quiz.pregunta %></h4>
+        <input type="text" name="repuesta" placeholder="Responda aquí" />
+        <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>

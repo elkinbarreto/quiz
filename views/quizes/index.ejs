@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <!--<link rel="icon" type="image/x-icon" href="../public/images/favicon.ico" />-->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Demuestra lo que sabes!</h1>
+    <p>Haz clic sobre la pregunta que quieras responder!</p>
+    <table>
+    	<% for(var i=0; i<quizes.length;i++){ %>
+    	<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+    	<% } %>
+    </table>
+    
+  </body>
+</html>
