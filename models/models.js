@@ -43,20 +43,19 @@ sequelize.sync().then(function(){
 
 			Quiz.create({
 				pregunta:'Capital de Italia?',
-				repuesta:'Roma'
+				repuesta:'Roma',
+				tema:'Ocio'
 			}).then(function(){
 				console.log('Primera pregunta inicializada');
 			});
 
 			Quiz.create({
 				pregunta:'Capital de Portugal?',
-				repuesta:'Lisboa'}).then(function(){
+				repuesta:'Lisboa',
+				tema:'Ocio'
+			}).then(function(){
 				console.log('Segunda pregunta inicializada');
 			});
-		}/*else{
-			Quiz.find(1).then(function(quiz){
-				console.log(quiz);
-			});
-		}*/
+		}
 	});
 });
