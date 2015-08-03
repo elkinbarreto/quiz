@@ -53,6 +53,10 @@ sequelize.sync().then(function(){
 				repuesta:'Lisboa'}).then(function(){
 				console.log('Segunda pregunta inicializada');
 			});
-		}
+		}/*else{
+			Quiz.find(1).then(function(quiz){
+				console.log(quiz);
+			});
+		}*/
 	});
 });
