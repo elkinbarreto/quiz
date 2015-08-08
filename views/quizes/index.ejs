@@ -8,6 +8,14 @@
   <body>
     <h1>Demuestra lo que sabes!</h1>
     <p>Haz clic sobre la pregunta que quieras responder!</p>
+    
+    <div id="form-busquedas">
+      <form name="form-buscar" method="get" action="/quizes">
+        <input type="text" name="search" placeHolder="Buscar..." />
+        <input type="submit" value="Buscar">
+      </form>
+    </div>
+
     <table>
     	<% for(var i=0; i<quizes.length;i++){ %>
     	<tr>
