@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Quiz</title>
-    <!--<link rel="icon" type="image/x-icon" href="../public/images/favicon.ico" />-->
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Demuestra lo que sabes!</h1>
-    <p>Haz clic sobre la pregunta que quieras responder!</p>
-    
+<div>
+    <h1 class="ion-ios-help-outline icon-section"></h1>
+    <h1 class="title-section">Demuestra lo que sabes!</h1>
+    <h3 class="subtitle-section">Haz clic sobre la pregunta que quieras responder!</h3>
+       
     <div id="form-busquedas">
       <form name="form-buscar" method="get" action="/quizes">
-        <input type="text" name="search" placeHolder="Buscar..." />
-        <input type="submit" value="Buscar">
+        <input id="txt-search" type="text" name="search" placeHolder="Buscar..." />
+        <input type="submit" id="btn-buscar" value="Buscar">
       </form>
     </div>
 
-    <table>
+    <table id="table-preguntas">
     	<% for(var i=0; i<quizes.length;i++){ %>
     	<tr>
         <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
-        <td><a href="quizes/<%= quizes[i].id %>/edit"><button type="button">Editar</button></a></td>
+        <td><a href="quizes/<%= quizes[i].id %>/edit" title="Editar"><button type="button" class="ion-ios-compose-outline table-icon"></button></a></td>
         <td>
           <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
-            <button type="submit" onClick=" return confirm('¿Borrar:<%= quizes[i].pregunta %>?')">Borrar</button>
+            <button type="submit" title="Eliminar" onClick=" return confirm('¿Borrar:<%= quizes[i].pregunta %>?')" class="ion-ios-trash-outline table-icon"></button>
           </form>
         </td>
       </tr>
     	<% } %>
     </table>
-    <a href="/quizes/new"><button type="button">Crear pregunta</button></a>
-    
-  </body>
-</html>
+    <a href="/quizes/new"><button type="button" id="btn-crear-pregunta" class="btn-green">Crear pregunta</button></a>
+  
+</div>

@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Quiz</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    
-    <form method="get" action="/quizes/<%= quiz.id %>/answer">
-        <h3>Pregunta:</h3>
-        <h4><%= quiz.pregunta %></h4>
-        <input type="text" name="repuesta" placeholder="Responda aquí" />
-        <input type="submit" value="Enviar" />
+<div>
+  <h1 class="ion-ios-help-outline icon-section"></h1>
+    <form method="get" action="/quizes/<%= quiz.id %>/answer" id="form-responder-preguntas">
+        <h1 class="title-section">Pregunta:</h1>
+        <h3 class="subtitle-section"><%= quiz.pregunta %></h3>
+        <input type="text" name="repuesta" placeholder="Responda aquí" id="txt-responder-pregunta" />
+        <input type="submit" value="Enviar" id="btn-responder-pregunta" />
     </form>
-  </body>
-</html>
+</div>  

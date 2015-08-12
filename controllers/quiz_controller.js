@@ -51,11 +51,14 @@ exports.show = function(req, res){
 exports.answer = function(req, res){
 
 	var resultado = 'Incorrecto';
+	var msgclass='ion-ios-close-outline';
+	
 
 	if(req.query.repuesta === req.quiz.repuesta){
 			resultado = 'Correcto';
+			msgclass='ion-ios-checkmark-outline';
 	}
-	res.render('quizes/answer',{quiz:req.quiz,repuesta:resultado,errors:[]});
+	res.render('quizes/answer',{quiz:req.quiz,repuesta:resultado,msgclass:msgclass,errors:[]});
 		
 };
 
