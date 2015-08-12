@@ -5,18 +5,225 @@
 
 body {
  
-  font: 16px Georgia, serif;
+  font: 16px sans-serif, Georgia, serif;
+  background-color: #000;
 }
 
-#page-wrap {margin:2% auto; color:white;}
-#page-wrap > .main {border:1px solid #999; padding: 1%; margin-bottom:1px; color:black;}
-section > div{padding: 20px;}
-header, nav, section {background: #eee; text-align: center;}
-footer {background: #eee; text-align: center;}
-nav span {margin:0px 10px 0px 0px;}
+#page-wrap {
+	margin:0 auto; 
+}
 
-a {
-  color: #00B7FF;
+#header-app{
+	background-color: #eee;
+	padding: 8px;
+
+}
+
+#title-app{
+	color: #0E6298;
+	text-align: left;
+	text-shadow:0px 1px #ffffff;
+	font-family: sans-serif;
+}
+
+#subtitle-app{
+	color: #EF7600;
+	text-align: left;
+	text-shadow:0px 1px #ffffff;
+	font-family:sans-serif;
+	font-weight: lighter;
+	font-size: 0.8em;
+}
+
+#nav-wrap { 
+	background-color: #F5F5F5;
+
+}
+
+#nav-bar {
+	padding: 8px;
+	background-color: #F5F5F5;
+}
+#nav-bar ul li{
+	list-style: none;
+	text-align: left;
+	border-bottom:1px solid #e0e0e0;
+}
+#nav-bar ul li a,label{
+	color:#9b9b9b;
+	display: block;
+	padding: 4px;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-weight: lighter;
+	font-size: 0.8em;
+	text-shadow:0px 1px #ffffff;
+	
+}
+#nav-bar ul li a:hover{
+	color:#0E6298;
+	border-left: 2px solid #EF7600;
+	background-color: #ededed;
+}
+
+#nav-bar ul li a span{
+	margin-right: 8px;
+}
+
+#section-main-wrap{
+	background-color: #F9F9F9;
+}
+section > div{
+	padding: 20px;
+}
+
+.icon-section{
+	font-size: 6em;
+	text-align: center;
+	color: #0E6298;
+}
+.title-section{
+	font-size: 4em;
+	text-align: center;
+	color: #0E6298;
+	font-family: sans-serif;
+}
+.subtitle-section{
+	font-size: 1.5em;
+	text-align: center;
+	color: #EF7600;
+	font-family: sans-serif;
+	font-style: italic;
+	font-weight: lighter;
+}
+.p-section{
+	margin-top: 30px;
+	font-size: 1em;
+	text-align: center;
+	color: #969696;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+
+#imagen-autor{
+	text-align: center;
+}
+
+#imagen-autor img{
+	border-radius: 50%;
+}
+
+#nombre-autor{
+	text-align: center;
+	color: #969696;
+	font-family: sans-serif;
+}
+#apellido-autor{
+	text-align: center;
+	color: #969696;
+	font-family: sans-serif;
+}
+#pais-autor{
+	text-align: center;
+	color: #969696;
+	font-family: sans-serif;
+}
+#form-busquedas,#form-responder-preguntas{
+	text-align: left;
+	margin: 20px 0px 10px 0;
+}
+#form-responder-preguntas{
+	text-align: center;
+	margin: 20px 0px 10px 0;
+}
+#txt-search,#txt-responder-pregunta,input[type='text'],select{
+	/*border-radius: 10px;*/
+	margin-bottom: 8px;
+	padding: 8px;
+	border: 1px solid #e0e0e0;
+	color: #969696;
+	font-family: sans-serif;
+	font-style: italic;
+	font-weight: 100;
+	width: 20%;
+}
+#btn-buscar, .btn-green{
+	background-color: #73D13B;
+	border: 1px solid #00A800;
+	color: #fff;
+	padding: 7px;
+	/*border-radius: 8px;*/
+	font-family: sans-serif;
+}
+.btn-red{
+	background-color: #ff0000;
+	border: 1px solid #A10017;
+	color: #fff;
+	padding: 7px;
+	/*border-radius: 8px;*/
+	font-family: sans-serif;
+}
+#table-preguntas{
+	width: 100%;
+	margin-bottom: 10px;
+	
+}
+#table-preguntas tr:nth-child(2n+1) td{
+	background-color: #f5f5f5;
+}
+#table-preguntas tr td{
+	padding: 4px;
+	border-bottom: 1px solid #dedede;
+	text-align: center;
+}
+#table-preguntas tr td:first-child{
+	text-align: left;
+}
+#table-preguntas tr:hover td{
+	background-color: #EEE;
+}
+
+#table-preguntas tr td a{
+	text-decoration: none;
+	color: #0E6298;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	display: block;
+}
+#table-preguntas tr td a:hover{
+	color: #EF7600;
+
+}
+.table-icon{
+	font-size: 1.2em;
+	background-color: transparent;
+	border: none;
+}
+#btn-crear-pregunta,#btn-responder-pregunta{
+	background-color: #73D13B;
+	border: 1px solid #00A800;
+	color: #fff;
+	padding: 7px;
+	/*border-radius: 8px;*/
+	font-family: sans-serif;
+}
+
+footer {
+	background: #000; 
+	text-align: center;
+	padding:10px 0 20px 0;
+}
+
+footer a{
+	color: #969696;
+	text-decoration: none;
+	margin-right: 15px;
+	font-family: sans-serif;
+	font-size: 0.8em;
+}
+footer a:hover{
+	color: #FFFFFF;
+
 }
 
 #ErrorMsgs{

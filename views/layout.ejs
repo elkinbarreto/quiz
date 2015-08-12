@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Preguntas</title>
     <!--<link rel="icon" type="image/x-icon" href="../public/images/favicon.ico" />-->
+    <link rel='stylesheet' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' type='text/css' />
     <link rel='stylesheet' href='/stylesheets/style.css' type='text/css' />
     <link rel='stylesheet' href='/stylesheets/wide.css' type='text/css' media='only screen and (min-width: 530px) and (min-device-width: 481px)' />
     <link rel='stylesheet' href='/stylesheets/smartphone.css' type='text/css' media='only screen and (max-width: 480px)' />
@@ -12,34 +13,40 @@
 
     <div id="page-wrap">
         
-        <header class="main" id="h1">
-          <h2>Quiz: El juego de las preguntas</h2>
+        <header id="header-app">
+          <h1 id="title-app">Quiz</h1>
+          <h4 id="subtitle-app"><em>El juego de las preguntas!</em></h4>
         </header>
 
-        <nav class="main" id="n1" role="navigation">
-          <span><a href="/">Inicio</a></span>
-          <span><a href="/quizes">Preguntas</a></span>
+        <div id="nav-wrap">
+          <nav id="nav-bar"role="navigation">
+            <ul>
+              <li><a href="/"><span class="ion-ios-home-outline"></span>Inicio</a></li>
+              <li><a href="/quizes"><span class="ion-ios-help-outline"></span>Preguntas</a></li>
+              <li><a href="/author"><span class="ion-ios-person-outline"></span>Autor</a></li>
+            </ul>
+            
+          </nav>
+        </div>
 
-          <span><a href="/author">Autor</a></span>
-
-        </nav>
-
-        <section class="main" id="s1">
-          <% if(errors.length){ %>
-                <span id='ErrorMsgs'>
-                  <h4>Corregir errores:</h4>
-                  <% for(var i in errors){  %>
-                      <span><%= errors[i].message  %></span><br>
-                  <% } %>
-                </span>
-          <% } %>
-          <%- body %>
-        </section>
+        <div id="section-main-wrap">
+          <section class="main" id="s1">
+            <% if(errors.length){ %>
+                  <span id='ErrorMsgs'>
+                    <h4>Corregir errores:</h4>
+                    <% for(var i in errors){  %>
+                        <span><%= errors[i].message  %></span><br>
+                    <% } %>
+                  </span>
+            <% } %>
+            <%- body %>
+          </section>
+      </div>
 
         <footer class="main" id="f1">
 
-           <a href="https://github.com/elkinbarreto/quiz/">Ver en Github</a>
-          <a href="http://es.wikipedia.org/wiki/Quiz">¿Qué es un Quiz?</a>
+          <a href="https://github.com/elkinbarreto/quiz/"><span class="ion-social-github"></span> Ver en Github</a>
+          <a href="http://es.wikipedia.org/wiki/Quiz"><span class="ion-earth"></span> ¿Qué es un Quiz?</a>
 
         </footer>
 

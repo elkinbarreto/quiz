@@ -1,4 +1,7 @@
-<h4>Edite la pregunta</h4>
-<form method="post" action="/quizes/<%= quiz.id %>?_method=put" >
-	<% include _form.ejs %>
-</form>
+<div>
+	<h1 class="ion-ios-compose-outline icon-section"></h1>
+	<h1 class="title-section">Edite la pregunta</h1>
+	<form method="post" action="/quizes/<%= quiz.id %>?_method=put" >
+		<% include _form.ejs %>
+	</form>
+</div>
