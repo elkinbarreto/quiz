@@ -6,4 +6,23 @@
         <input type="text" name="repuesta" placeholder="Responda aquí" id="txt-responder-pregunta" />
         <input type="submit" value="Enviar" id="btn-responder-pregunta" />
     </form>
+
+    <div>
+      <p><a href="/quizes/<%= quiz.id  %>/comments/new"><button class="btn-green">Nuevo comentario</button></a></p>
+      
+      <div id="comments-section">
+        <% if(quiz.Comments.length>0){ %>
+              <h4>Comentarios (<%= quiz.Comments.length %>)</h4>
+              <table id="table-comments">
+                <% for(index in quiz.Comments){%>
+                <tr><td> <%= quiz.Comments[index].texto %></td></tr><% } %>
+              </table>
+        <% }else{ %>
+              <h4>Aún no hay comentarios!</h4>
+        <% } %>
+      </div>
+      
+
+      
+    </div>
 </div>  
