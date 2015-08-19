@@ -16,7 +16,14 @@
         
         <header id="header-app">
           <h1 id="title-app">Quiz</h1>
-          <h4 id="subtitle-app"><em>El juego de las preguntas!</em></h4>
+          <h4 id="subtitle-app">El juego de las preguntas!</h4>
+          <h6 id="user-session">
+              <% if(!session.user){ %>
+                  <a href="/login">Login</a>
+              <% }else{ %>
+                  <a href="/logout">Salir [<%= session.user.username %>]</a>
+              <% } %>
+          </h6>
         </header>
 
         <div id="nav-wrap">
