@@ -31,10 +31,35 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //helpers dinamicos
 app.use(function(req, res, next){
-    //guardar path en session.redir par despues de login
-    if(!req.path.match(/\/login|\/logout/)){
-        req.session.redir = req.path;
+    
+    if(req.session){//si hay na sesion abierta
+
+        var d = new Date(); // captumarmos la fecha actual
+        var hora = d.getTime(); // obtenemos el tiempo en milisegundos
+
+        //guardar path en session.redir par despues de login
+        if(!req.path.match(/\/login|\/logout/)){
+            
+            req.session.redir = req.path;
+
+            if(req.session.hora){//si existe el campo hora como variable de sesion 
+
+                //restamos la hora actual con la ultima hora almacenada el resultado en en milisegundos
+                //dividimos por 60000 (1 minuto = 60000 miliseg)
+                if(((hora - req.session.hora)/60000)>=2){
+                     delete req.session.user;
+                     res.redirect('/login');
+                }
+                   
+            }
+            else{//si no existe el campo hora como variable de sesion, la creamos y le asignamos la hora actual
+                req.session.hora = hora;
+            }
+            
+        }
+
     }
+    
 
     //hacer visible req.session en las vistas
     res.locals.session = req.session;
