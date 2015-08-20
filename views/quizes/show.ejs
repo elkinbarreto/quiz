@@ -14,8 +14,17 @@
         <% if(quiz.Comments.length>0){ %>
               <h4>Comentarios (<%= quiz.Comments.length %>)</h4>
               <table id="table-comments">
-                <% for(index in quiz.Comments){%>
-                <tr><td> <%= quiz.Comments[index].texto %></td></tr><% } %>
+                <% for(index in quiz.Comments){ %>
+                    <% if(quiz.Comments[index].publicado || session.user){ %>
+                        <tr>
+                          <td> <%= quiz.Comments[index].texto %></td>
+                          <td> <% if(session.user && !quiz.Comments[index].publicado){ %>
+                                    <a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id %>/publish"><button class="btn-green">Publicar</button></a>
+                                <% } %>
+                          </td>
+                        </tr>
+                    <% } %>
+                <% } %>
               </table>
         <% }else{ %>
               <h4>Aún no hay comentarios!</h4>

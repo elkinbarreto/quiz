@@ -8,6 +8,9 @@ var sessionController = require('../controllers/session_controller');
 //Autoload de comandos con :quizId
 router.param('quizId',quizController.load);
 
+//Autoload de comandos con :commentId
+router.param('commentId',commentController.load);
+
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz',errors:[] });
@@ -35,5 +38,6 @@ router.get('/author',function(req, res){
 
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments', commentController.create);
+router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',sessionController.loginRequired, commentController.publish);
 
 module.exports = router;
