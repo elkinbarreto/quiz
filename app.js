@@ -48,7 +48,7 @@ app.use(function(req, res, next){
                 //dividimos por 60000 (1 minuto = 60000 miliseg)
                 if(((hora - req.session.hora)/60000)>=2){
                      delete req.session.user;
-                     res.redirect('/login');
+                     //res.redirect('/login');
                 }
                    
             }
